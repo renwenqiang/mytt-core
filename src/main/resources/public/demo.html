@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.w3.org/1999/xhtml">
+  <header></header>
+  <body>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.js"></script>
+    <script>
+      $.ajax({
+        type: "post",
+        url: "getAll", // 需要改动
+        // data: JSON.stringify({
+        //     "id": 709783127660175360
+        // }),
+        data: {},
+        dataType: "json",
+        success: function(res) {
+          console.log("success");
+          console.log(res);
+        },
+        error: function (res) {
+          console.log("error");
+          console.log(res);
+        }
+      });
+    </script>
+  </body>
+</html>

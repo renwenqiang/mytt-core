@@ -1,0 +1,54 @@
+mybatis-plus:
+  mapper-locations: classpath:mapping/*.xml
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test0523?serverTimezone=UTC&characterEncoding=utf-8
+    username: root
+    password: root
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    password:
+    timeout: 5000
+    lettuce:
+      pool:
+        max-active: 30
+        max-idle: 10
+        min-idle: 0
+        max-wait: -1
+        time-between-eviction-runs: 60000
+  task:
+    execution:
+      pool:
+        core-size: 10
+        max-size: 20
+      thread-name-prefix: mytask-
+logging:
+  level:
+    org:
+      springframework:
+        web: debug
+    com:
+      boot:
+        mytt:
+          core: debug
+  file:
+    path: d:/logs
+management:
+  endpoint:
+    health:
+      show-details: always
+server:
+  tomcat:
+    max-connections: 20000
+    max-threads: 2000
+    connection-timeout: 30000
