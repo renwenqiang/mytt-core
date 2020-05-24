@@ -39,7 +39,7 @@ public class EmployeeController {
 
     @RequestMapping("getOne")
     public String getOne(Long id) {
-
+String dev = "dev";
         logger.info("getOne: ", employeeService.getById(id));
         return "OK";
     }
