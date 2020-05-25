@@ -28,81 +28,139 @@ public class DoubleUtils {
 
     }
 
+    /**
+     * 提供精确的加法运算。
+     *
+     * @param v1 被加数
+     * @param v2 加数
+     * @return 两个参数的和
+     */
     public static double add(double v1, double v2) {
         BigDecimal b1 = new BigDecimal(Double.toString(v1));
         BigDecimal b2 = new BigDecimal(Double.toString(v2));
         return b1.add(b2).doubleValue();
     }
 
+    /**
+     * 提供精确的减法运算。
+     *
+     * @param v1 被减数
+     * @param v2 减数
+     * @return 两个参数的差
+     */
     public static double sub(double v1, double v2) {
         BigDecimal b1 = new BigDecimal(Double.toString(v1));
         BigDecimal b2 = new BigDecimal(Double.toString(v2));
         return b1.subtract(b2).doubleValue();
     }
 
+    /**
+     * 提供精确的乘法运算。
+     *
+     * @param v1 被乘数
+     * @param v2 乘数
+     * @return 两个参数的积
+     */
     public static double mul(double v1, double v2) {
         BigDecimal b1 = new BigDecimal(Double.toString(v1));
         BigDecimal b2 = new BigDecimal(Double.toString(v2));
         return b1.multiply(b2).doubleValue();
     }
 
-    public static double div(double v1, double v2, int scale) {
-        if (scale < 0)
-            throw new IllegalArgumentException("无效参数");
-        BigDecimal b1 = new BigDecimal(Double.toString(v1));
-        BigDecimal b2 = new BigDecimal(Double.toString(v2));
-        return b1.divide(b2, scale, BigDecimal.ROUND_HALF_UP).doubleValue();
-    }
-
+    /**
+     * 提供（相对）精确的除法运算，当发生除不尽的情况时，精确到 小数点以后10位，以后的数字四舍五入。
+     *
+     * @param v1 被除数
+     * @param v2 除数
+     * @return 两个参数的商
+     */
     public static double div(double v1, double v2) {
-        BigDecimal b1 = new BigDecimal(Double.toString(v1));
-        BigDecimal b2 = new BigDecimal(Double.toString(v2));
         return div(v1, v2, DEF_DIV_SCALE);
     }
 
-    public static double round(double v, int scale) {
-        if (scale < 0)
-            throw new IllegalArgumentException("无效参数");
-        BigDecimal b1 = new BigDecimal(Double.toString(v));
-        BigDecimal b2 = new BigDecimal("1");
+    /**
+     * 提供（相对）精确的除法运算。当发生除不尽的情况时，由scale参数指 定精度，以后的数字四舍五入。
+     *
+     * @param v1    被除数
+     * @param v2    除数
+     * @param scale 表示表示需要精确到小数点以后几位。
+     * @return 两个参数的商
+     */
+    public static double div(double v1, double v2, int scale) {
+        if (scale < 0) {
+            throw new IllegalArgumentException(
+                    "The   scale   must   be   a   positive   integer   or   zero");
+        }
+        BigDecimal b1 = new BigDecimal(Double.toString(v1));
+        BigDecimal b2 = new BigDecimal(Double.toString(v2));
         return b1.divide(b2, scale, BigDecimal.ROUND_HALF_UP).doubleValue();
     }
 
-    public static String double2String(double v, String type) {
-        DecimalFormat df = new DecimalFormat(type);
-        return df.format(v);
+    /**
+     * 提供精确的小数位四舍五入处理。
+     *
+     * @param v     需要四舍五入的数字
+     * @param scale 小数点后保留几位
+     * @return 四舍五入后的结果
+     */
+    public static double round(double v, int scale) {
+        if (scale < 0) {
+            throw new IllegalArgumentException(
+                    "The   scale   must   be   a   positive   integer   or   zero");
+        }
+        BigDecimal b = new BigDecimal(Double.toString(v));
+        BigDecimal one = new BigDecimal("1");
+        return b.divide(one, scale, BigDecimal.ROUND_HALF_UP).doubleValue();
     }
 
-    public static String int2String(int v, String type) {
-        DecimalFormat df = new DecimalFormat(type);
-        return df.format(v);
+    /**
+     * double 转换string
+     *
+     * @param v
+     * @return
+     */
+    public static String doubleToString(double v, String type) {
+        DecimalFormat b = new DecimalFormat(type);
+        String value = b.format(v);
+        return value;
     }
 
-    public static double string2Double(String str) {
+    /**
+     * String 转换double
+     *
+     * @param str
+     * @return
+     */
+    public static double StringToDouble(String str) {
         double num = 0;
         if (StringUtils.isEmpty(str)) {
             return num;
         }
-        return Double.parseDouble(str);
+        num = Double.parseDouble(str);
+        return num;
     }
 
-    public static BigDecimal string2BigDecimal(String str) {
-        BigDecimal b = new BigDecimal("0");
-        if (StringUtils.isEmpty(str)) {
-            return b;
+    /**
+     * String转换BigDecimal
+     */
+    public static BigDecimal StringToBigDecimal(String v) {
+        BigDecimal num = new BigDecimal(0);
+        if (StringUtils.isEmpty(v)) {
+            return num;
         }
-        return new BigDecimal(str);
+        num = new BigDecimal(v);
+        return num;
     }
 
-    public static String bigDecimal2String(BigDecimal b) {
-        String str = "0";
-        if (Objects.isNull(b)) {
-            return str;
+    /**
+     * BigDecimal转换String
+     */
+    public static String BigDecimalToString(BigDecimal v) {
+        String num = "0";
+        if (Objects.isNull(v)) {
+            return num;
         }
-        return b.toString();
-    }
-
-    public static void main(String[] args) {
-        System.out.println(int2String(32, "###.##"));
+        num = v.toString();
+        return num;
     }
 }

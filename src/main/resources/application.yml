@@ -1,3 +1,16 @@
+renwq:
+  password:
+    privateKey: MIICdQIBADANBgkqhkiG9w0BAQEFAASCAl8wggJbAgEAAoGBAJHEfBvR23VMSGnz2HFeIq/tnTUPzcfPo18dqgIoyM7n2dq3DwLI1UhCA577I981BNlzOOpZRTld+mqYCpVcFbWNNiR7NrGZHnrYidUdfSlxDzwAsS1oa4zeRVcf25XwN3Y6i6R1LonXyEron6UtnO66vILuOt+zdZRs1Xxti9O5AgMBAAECgYAa52kAuXsH60xyQc9xHS7JydF6ObCBcJF2vMLkIyLtDV3oQGFE4kx7SbPhY/j6+Y4rlFis6E0eiXnusqFBb/2RfTJCqlAlVHOQ87eSUWIsSKx5dQLvWZVY4JLYm44lEwgarVPpx2S8+k/Ts/fCrVbS8Yjq2nbMOyLqbPKY4mBAAQJBANGxVQf6WQE+RRYy1Px6R66xqck38y4zb3hnwhZaKfnvXcwmMLw6dkpDVcN0fnGB1W6UcmCdT+fzbLJPv+k5W1kCQQCx9TyPSDSaDtNnaHsy3QFcQRTk7PHV4xFrtnIxUgBBLWSBukvdN7Vvcw1yId4pR8qPSq5H0uwyzpELLZIVZg9hAkAEJY2Y6sp3y9Nx7O9pTsG8IqdI42Jbt4isyOB9sKrD1of0UY0FK+LK9SntA5C8jeS6mxTn9DRwUdAEdq9E3W2BAkB2nQDKd9Qnwy4BRNCo7EnV1cM5ev0OFRUteCPQ39kvmDPfi+64+kLCkCssIYrUdPd8XsifMuUgUDK5ApzWCnrBAkA0TZ+21PZpUq+qRmTJP+fqWzXmu5JvXxNdSkMCNkh8DIwOnIwDqsQshaGDpT7XHStTqlgDeHcxEACEQVLCxIoX
+  httpclient:
+    connecttimeout: 30000
+    requesttimeout: 30000
+    sockettimeout: 60000
+    maxtotalconnections: 50
+    defaultmaxperroute: 10
+    defaultkeepalivetimemillis: 20000
+    closeidleconnectionwaittimesecs: 30
+    defaultHttpRequestRetry: 3
+    requestSentRetryEnabled: true
 mybatis-plus:
   mapper-locations: classpath:mapping/*.xml
 #  configuration:
