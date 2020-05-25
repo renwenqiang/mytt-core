@@ -7,9 +7,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * filter过滤器，获取项目路径，设置ajax超时标识
- *
- * @author billJiang QQ:475572229
+ * @author renwq
+ * @date 2020/5/25
  */
 @WebFilter(filterName = "corsFilter", urlPatterns = "/*")
 public class CorsFilter implements Filter {

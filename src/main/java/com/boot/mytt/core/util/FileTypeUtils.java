@@ -9,6 +9,10 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+/**
+ * @author renwq
+ * @date 2020/5/25
+ */
 public class FileTypeUtils {
 
     public final static Map<String, String> FILE_TYPE_MAP = new HashMap<String, String>();

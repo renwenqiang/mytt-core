@@ -6,6 +6,10 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+/**
+ * @author renwq
+ * @date 2020/5/25
+ */
 @Getter
 @Setter
 @ToString

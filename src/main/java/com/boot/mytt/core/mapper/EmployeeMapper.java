@@ -7,6 +7,10 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+/**
+ * @author renwq
+ * @date 2020/5/25
+ */
 @Component
 public interface EmployeeMapper extends BaseMapper<Employee> {
 

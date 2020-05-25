@@ -6,6 +6,10 @@ import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.Objects;
 
+/**
+ * @author renwq
+ * @date 2020/5/25
+ */
 public class DoubleUtils {
 
     private static final int DEF_DIV_SCALE = 10;

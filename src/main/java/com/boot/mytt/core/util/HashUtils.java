@@ -1,10 +1,8 @@
 package com.boot.mytt.core.util;
 
 /**
- * Hash算法
- * 推荐使用FNV1算法
- *
- * @author wuxj
+ * @author renwq
+ * @date 2020/5/25
  */
 public class HashUtils {
 

@@ -7,6 +7,10 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.io.Serializable;
 
+/**
+ * @author renwq
+ * @date 2020/5/25
+ */
 @Slf4j
 @Getter
 @Setter

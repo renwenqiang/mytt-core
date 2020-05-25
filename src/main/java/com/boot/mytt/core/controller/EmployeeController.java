@@ -6,14 +6,16 @@ import com.boot.mytt.core.pojo.EmployeePOJO;
 import com.boot.mytt.core.service.EmployeeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.data.convert.EntityWriter;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import java.util.List;
-import java.util.Map;
 
+/**
+ * @author renwq
+ * @date 2020/5/25
+ */
 @RestController
 public class EmployeeController {
 
@@ -39,7 +41,6 @@ public class EmployeeController {
 
     @RequestMapping("getOne")
     public String getOne(Long id) {
-String dev = "dev";
         logger.info("getOne: ", employeeService.getById(id));
         return "OK";
     }

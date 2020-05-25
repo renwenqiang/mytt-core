@@ -5,6 +5,10 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * @author renwq
+ * @date 2020/5/25
+ */
 public class JacksonUtils {
 
     private static final ObjectMapper objectMapper = new ObjectMapper();

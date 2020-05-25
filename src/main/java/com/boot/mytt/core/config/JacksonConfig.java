@@ -6,6 +6,10 @@ import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * @author renwq
+ * @date 2020/5/25
+ */
 @Configuration
 public class JacksonConfig {
 

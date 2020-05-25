@@ -1,5 +1,9 @@
 package com.boot.mytt.core.util;
 
+/**
+ * @author renwq
+ * @date 2020/5/25
+ */
 public class HexUtils {
 
     private HexUtils() {

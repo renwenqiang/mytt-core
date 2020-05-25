@@ -6,18 +6,22 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.optimize.JsqlParser
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * @author renwq
+ * @date 2020/5/25
+ */
 @Configuration
 public class MybaisConfig {
 
-//    @Bean
-//    public IdentifierGenerator idGenerator(Snowflake snowflake) {
-//        return new IdentifierGenerator() {
-//            @Override
-//            public Number nextId(Object entity) {
-//                return snowflake.nextId();
-//            }
-//        };
-//    }
+    @Bean
+    public IdentifierGenerator idGenerator(Snowflake snowflake) {
+        return new IdentifierGenerator() {
+            @Override
+            public Number nextId(Object entity) {
+                return snowflake.nextId();
+            }
+        };
+    }
 
     @Bean
     public PaginationInterceptor paginationInterceptor() {
