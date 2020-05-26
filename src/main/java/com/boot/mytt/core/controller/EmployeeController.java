@@ -13,8 +13,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * @author renwq
- * @date 2020/5/25
+ *
  */
 @RestController
 public class EmployeeController {
@@ -23,16 +22,17 @@ public class EmployeeController {
     private EmployeeService employeeService;
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
-
+    // 单行注释
     @RequestMapping("getAll")
     public List getAll() {
         List<EmployeePOJO> list = employeeService.getAll();
         logger.info("getAll: ", list);
         return list;
     }
-
+/*   这也是注释 */
     @RequestMapping("getPart")
     public List getPart() {
+
         List<Employee> list = employeeService.list(Wrappers.<Employee>lambdaQuery()
                 .select(Employee::getId, Employee::getName));
         logger.info("getAll: ", list);
