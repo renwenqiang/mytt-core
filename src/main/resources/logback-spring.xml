@@ -1,8 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <include resource="org/springframework/boot/logging/logback/base.xml" />
+    <!--
+    configuration：根节点，包含三个属性scan、scanPeriod和debug，
+    scan如果设置为true，表示配置文件有变化时会被重新加载；
+    scanPeriod设置监测配置文件是否有修改的时间间隔；
+    debug设置为true表示将打印出logback内部日志信息，实时查看logback运行状态
+    -->
+    <!--
+    <configuration scan="true" scanPeriod="60 seconds" debug="false">
+    -->
+    <!--
+    contextName：子节点，用来设置上下文， 每个logger都关联到logger上下文，默认上下文名称为default
+    -->
+    <!--
+    property：用来定义变量值，有两个属性name和value，name是变量的名字，value是变量对应的值
+    -->
+    <!--
+    timestamp：获取时间戳字符串，有两个属性key和datePattern，key标识此<timestamp>的名字，datePattern设置将当前时间转换为字符串
+    -->
+    <!--
+    logger：用来设置某一个包或具体的某一个类的日志打印级别、以及指定<appender>
+    -->
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
 
     <appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+        <!--
+        appender：负责写日志的组件，有两个必要属性name和class，name指定appender名称，class指定appender的全限定名
+        -->
         <destination>127.0.0.1:4560</destination>
         <!-- 日志输出编码 -->
         <encoder charset="UTF-8"
@@ -28,8 +52,8 @@
     </appender>
 
     <root level="DEBUG">
-        <appender-ref ref="LOGSTASH" />
-        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="LOGSTASH"/>
+        <appender-ref ref="CONSOLE"/>
     </root>
 
 </configuration>

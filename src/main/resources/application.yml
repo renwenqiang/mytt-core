@@ -56,6 +56,7 @@ logging:
           core: debug
   file:
     path: d:/logs
+  config: classpath:logback-spring.xml
 management:
   endpoint:
     health:
