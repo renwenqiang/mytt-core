@@ -1,7 +1,6 @@
 package com.boot.mytt.core.pojo;
 
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
+import com.boot.mytt.core.validation.annotation.Telephone;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -16,6 +15,7 @@ import lombok.ToString;
 public class EmployeePOJO {
 
     private Long id;
+    @Telephone
     private String name;
     private Integer age;
     //@JsonSerialize(using= ToStringSerializer.class)
