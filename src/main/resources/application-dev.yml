@@ -45,6 +45,11 @@ spring:
         core-size: 10
         max-size: 20
       thread-name-prefix: mytask-
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 logging:
   level:
     org:
