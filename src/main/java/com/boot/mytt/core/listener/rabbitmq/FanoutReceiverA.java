@@ -1,20 +1,21 @@
 package com.boot.mytt.core.listener.rabbitmq;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
-
 import java.util.Map;
-
+/**
+ * @Author : JCccc
+ * @CreateTime : 2019/9/3
+ * @Description :
+ **/
 @Component
-@RabbitListener(queues = "TestDirectQueue")//监听的队列名称 TestDirectQueue
-@Slf4j
-public class DirectReceiver {
+@RabbitListener(queues = "fanout.A")
+public class FanoutReceiverA {
  
     @RabbitHandler
     public void process(Map testMessage) {
-        log.info("DirectReceiver消费者收到消息  : " + testMessage.toString());
+        System.out.println("FanoutReceiverA消费者收到消息  : " +testMessage.toString());
     }
  
 }
