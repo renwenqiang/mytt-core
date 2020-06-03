@@ -24,5 +24,7 @@ public class FastjsonConfig implements WebMvcConfigurer {
         fastJsonConverter.setFastJsonConfig(fjc);
         converters.add(fastJsonConverter);
         System.out.println("FastjsonConfig-----------------------");
+//        Boolean isloadconfig = Boolean.parseBoolean(System.getProperty("rocketmq.client.log.loadconfig", "true"));
+//        System.out.println(isloadconfig);
     }
 }

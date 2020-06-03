@@ -1,11 +1,13 @@
 package com.boot.mytt.core.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.boot.mytt.core.distributelock.aspect.RedisLock;
 import com.boot.mytt.core.entity.Employee;
 import com.boot.mytt.core.listener.rocketmq.body.EmployeeBody;
 import com.boot.mytt.core.pojo.EmployeePOJO;
 import com.boot.mytt.core.redis.util.JacksonRedisUtils;
+import com.boot.mytt.core.redisson.RedissonLockAnnotation;
 import com.boot.mytt.core.service.EmployeeService;
 import com.boot.mytt.core.util.JacksonUtils;
 import org.apache.rocketmq.client.producer.SendStatus;
@@ -13,6 +15,7 @@ import org.apache.rocketmq.client.producer.TransactionSendResult;
 import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -117,8 +120,8 @@ public class EmployeeController {
 
     // 验证分布式锁
     @RequestMapping("validDistributeLock")
-    @RedisLock(value = "validDistributeLock")
-    public String validDistributeLock() {
+    @RedisLock(prefix = "pre", value = "#employeePOJO.name,#employeePOJO.age,#employeePOJO.id")
+    public String validDistributeLock(EmployeePOJO employeePOJO) {
         try {
             Thread.sleep(5000);
         } catch (Exception e) {
@@ -144,6 +147,33 @@ public class EmployeeController {
     @RequestMapping("generalMessage")
     public String generalMessage() {
         this.rocketMQTemplate.syncSend("employee_msg_topic", JacksonUtils.obj2json(new EmployeeBody(3L, "generalMessage")));
+        return "OK";
+    }
+
+    // 验证 RedissonLock
+    @RequestMapping(value = "redissonLockAnnotation", consumes = "application/json")
+    @RedissonLockAnnotation(lockRedisKey = "id,age,name")
+    public String redissonLockAnnotation(@RequestBody JSONObject params) {
+        try {
+            Thread.sleep(3000);
+        } catch (Exception e) {
+
+        }
+        return "OK";
+    }
+
+    // 验证 @Cacheable的使用
+    @RequestMapping(value = "teeCache")
+//    @Cacheable(key = "")
+//    @CacheEvict
+//    @CachePut
+    @ConditionalOnExpression("#")
+    public String teeCache() {
+        try {
+            Thread.sleep(3000);
+        } catch (Exception e) {
+
+        }
         return "OK";
     }
 }

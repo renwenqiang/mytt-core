@@ -16,6 +16,13 @@
         <logger name="com.boot" level="DEBUG" additivity="false">
             <appender-ref ref="STDOUT"/>
         </logger>
+        <!--    禁用rabbitmq日志    -->
+        <logger name="org.springframework.amqp.rabbit.listener.BlockingQueueConsumer" level="WARN" />
+        <logger name="org.springframework.core.task.SimpleAsyncTaskExecutor" level="WARN" />
+        <!--    禁用rocketmq日志    -->
+        <logger name="RocketmqRemoting" additivity="false">
+            <level value="WARN"/>
+        </logger>
         <root level="INFO">
             <appender-ref ref="STDOUT"/>
         </root>

@@ -61,6 +61,7 @@ public class RedisLockAspect {
                 if (StringUtils.isNotEmpty(keyValue)) {
                     key.append(keyValue);
                 }
+                log.info(keyValue);
             }
         } else {
             key.append(redisLock.value());
