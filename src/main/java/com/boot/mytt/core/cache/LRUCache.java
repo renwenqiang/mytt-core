@@ -11,6 +11,8 @@ import java.util.Set;
  */
 public class LRUCache<K, V> {
 
+    private int a;
+
     private final int MAX_CACHE_SIZE;
 
     private final float DEFAULT_LOAD_FACTORY = 0.75F;
