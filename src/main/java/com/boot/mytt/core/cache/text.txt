@@ -1,0 +1,3 @@
+maps包：HashMap 和 LinkedHashMap的区别-顺序问题
+LRUCache 实现LRU(Least Recently Used最近最少算法，以access模式创建LinkedHashMap)
+SimpleCache Lock锁+WeakHashMap的缓存实现

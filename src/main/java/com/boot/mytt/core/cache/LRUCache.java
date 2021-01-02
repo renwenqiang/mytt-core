@@ -11,8 +11,6 @@ import java.util.Set;
  */
 public class LRUCache<K, V> {
 
-    private int a;
-
     private final int MAX_CACHE_SIZE;
 
     private final float DEFAULT_LOAD_FACTORY = 0.75F;
@@ -37,12 +35,12 @@ public class LRUCache<K, V> {
 
     public LRUCache(int cacheSize) {
         MAX_CACHE_SIZE = cacheSize;
-        int capacity = (int)Math.ceil(MAX_CACHE_SIZE / DEFAULT_LOAD_FACTORY) + 1;
-        sf = new SoftReference<>(new LinkedHashMap<K, V>(MAX_CACHE_SIZE, DEFAULT_LOAD_FACTORY, true){
-            private static final long serialVersionUID = 1L;
+        int capacity = (int) Math.ceil(MAX_CACHE_SIZE / DEFAULT_LOAD_FACTORY) + 1;
+        sf = new SoftReference(new LinkedHashMap<K, V>(capacity, DEFAULT_LOAD_FACTORY, true) {
+            private static final long serialVersionUID = 928167503155522377L;
 
             @Override
-            protected boolean removeEldestEntry(Map.Entry<K,V> eldest) {
+            protected boolean removeEldestEntry(Map.Entry<K, V> eldest) {
                 return size() > MAX_CACHE_SIZE;
             }
         });
