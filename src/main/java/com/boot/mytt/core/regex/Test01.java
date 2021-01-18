@@ -6,7 +6,7 @@ package com.boot.mytt.core.regex;
  */
 public class Test01 {
 
-    void fn() {
+    protected void fn() {
         System.out.println("Test01");
     }
 }
