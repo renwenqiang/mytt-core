@@ -1,4 +1,4 @@
-package com.boot.mytt.core.teest;
+package com.boot.mytt.core.test;
 
 import lombok.extern.slf4j.Slf4j;
 
