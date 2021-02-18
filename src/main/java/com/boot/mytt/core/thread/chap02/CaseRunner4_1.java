@@ -10,7 +10,7 @@
 https://github.com/Viscent/javamtia
 http://www.broadview.com.cn/31065
 */
-package com.boot.mytt.core.thread.chap2;
+package com.boot.mytt.core.thread.chap02;
 
 
 import com.boot.mytt.core.util.Debug;
