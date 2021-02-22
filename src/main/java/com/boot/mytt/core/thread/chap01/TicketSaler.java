@@ -1,4 +1,4 @@
-package com.boot.mytt.core.thread;
+package com.boot.mytt.core.thread.chap01;
 
 class MySalerThread implements Runnable{
     private int ticketNum = 10;
