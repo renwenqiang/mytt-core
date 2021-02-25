@@ -13,10 +13,10 @@ import java.util.stream.Collectors;
 public class Test03 {
     public static void main(String[] args) {
         List<User> list = new ArrayList<>();
-        list.add(new User(5, "张三"));
-        list.add(new User(3, "李四"));
-        list.add(new User(7, "王五"));
-        list.add(new User(1, "赵六"));
+        list.add(new User("1", "张三"));
+        list.add(new User("2", "李四"));
+        list.add(new User("1", "王五"));
+        list.add(new User("2", "赵六"));
         System.out.println(list);
         list.sort(Comparator.comparing(User::getId).reversed());
         System.out.println(list);
@@ -24,10 +24,10 @@ public class Test03 {
 }
 
 class User{
-    Integer id;
+    String id;
     String name;
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
@@ -39,7 +39,7 @@ class User{
                 '}';
     }
 
-    public User(Integer id, String name) {
+    public User(String id, String name) {
         this.id = id;
         this.name = name;
     }

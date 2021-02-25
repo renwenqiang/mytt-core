@@ -3,3 +3,5 @@ spring:
     active: dev
   application:
     name: mytt-core
+
+com.bean.renwq=1234321
