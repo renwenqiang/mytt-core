@@ -1,6 +1,5 @@
 package com.boot.mytt.core.thread.chap03.case01;
 
-import java.util.Objects;
 
 /**
  * @author renwq
