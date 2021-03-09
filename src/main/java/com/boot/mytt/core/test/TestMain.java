@@ -25,11 +25,11 @@ public class TestMain {
 //        System.out.println();
 
         List<String> strList = new ArrayList<>();
-        for (int k=1; k<=26; k++) {
+        for (int k=1; k<=5; k++) {
             strList.add("" + k);
         }
         System.out.println(strList);
-        int batchNum = 10;
+        int batchNum = 1;
         Map<String, List<String>> tmpMap = new HashMap<>();
 
         List<String> listT = new ArrayList<>();
