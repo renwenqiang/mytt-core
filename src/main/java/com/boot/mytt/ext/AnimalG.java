@@ -12,5 +12,8 @@ public class AnimalG extends TestParent {
         AnimalG anE = new AnimalG();
         anE.fnC();
         anE.fnD();
+        AnimalG animalE = new AnimalG();
+        animalE.fnC();
+        animalE.fnD();
     }
 }
