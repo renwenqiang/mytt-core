@@ -9,11 +9,8 @@ import com.boot.mytt.core.ext.TestParent;
 public class AnimalG extends TestParent {
 
     public static void main(String[] args) {
-        AnimalG anE = new AnimalG();
-        anE.fnC();
-        anE.fnD();
-        AnimalG animalE = new AnimalG();
-        animalE.fnC();
-        animalE.fnD();
+        AnimalG arererE = new AnimalG();
+        arererE.fnC();
+        arererE.fnD();
     }
 }
