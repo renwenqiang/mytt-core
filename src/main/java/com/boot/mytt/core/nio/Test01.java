@@ -6,6 +6,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * @author renwq
@@ -14,7 +17,12 @@ import java.nio.channels.FileChannel;
 public class Test01 {
 
     public static void main(String[] args) throws IOException {
-        Test01.method6();
+        Calendar calendar = Calendar.getInstance();
+        calendar.set( Calendar.HOUR_OF_DAY, 10 ); // 控制时
+        calendar.set( Calendar.MINUTE, 0 );    // 控制分
+        calendar.set( Calendar.SECOND, 0 );    // 控制秒
+        Date time = calendar.getTime();
+        System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(time));
     }
     public static void method6() throws IOException {
         try {

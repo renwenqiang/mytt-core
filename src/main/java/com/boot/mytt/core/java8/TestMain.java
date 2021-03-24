@@ -6,6 +6,18 @@ import java.util.stream.Collectors;
 public class TestMain {
 
     public static void main(String[] args) {
+
+        /*Test04 t4 = new Test04() {
+            @Override
+            public void fn() {
+                System.out.println("fn is executing...");
+            }
+        };
+        t4.fn();*/
+
+        Test04 t5 = t -> t + "5";
+        Object res = t5.fn(3);
+        System.out.println(res);
         /*Person person  = new Person();
         person.setId(1L);
         person.setName("张三");
@@ -13,7 +25,7 @@ public class TestMain {
         Consumer<String> walkConsumer = person::walk;
         walkConsumer.accept("黄山路");*/
 
-        Person person  = new Person();
+        /*Person person  = new Person();
         person.setId(2L);
         person.setName("张三1");
         person.setAge(22);
@@ -35,6 +47,6 @@ public class TestMain {
         Map<Boolean, List<Person>> m = list.stream().collect(Collectors.partitioningBy(k -> k.getId() >= 2));
         Hashtable<Object,Object> ht = System.getProperties();
         Set<Map.Entry<Object,Object>> set = ht.entrySet();
-        System.out.println(ht);
+        System.out.println(ht);*/
     }
 }
