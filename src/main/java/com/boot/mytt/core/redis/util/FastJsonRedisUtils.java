@@ -11,10 +11,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-/**
- * @author renwq
- * @date 2020/5/25
- */
 public class FastJsonRedisUtils {
 
     private RedisTemplate<String, Object> redisTemplate;
