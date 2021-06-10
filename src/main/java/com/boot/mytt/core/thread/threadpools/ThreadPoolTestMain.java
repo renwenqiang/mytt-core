@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
  * @author renwq
  * @date 2021/1/2 14:24
  */
-public class Test01 {
+public class ThreadPoolTestMain {
 
     /**
      * 1.创建一个可缓存的线程池。如果线程池的大小超过了处理任务所需要的线程，那么就会回收部分空闲（60秒不执行任务）的线程<br>
@@ -77,6 +77,6 @@ public class Test01 {
     }
 
     public static void main(String[] args) {
-        cacheThreadPool();
+        singleTheadPoolTest();
     }
 }
